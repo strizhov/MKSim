@@ -1,0 +1,32 @@
+MKSim a multi-threaded implementation of the "Multi-keyword similarity search over encrypted cloud data" paper.
+http://link.springer.com/chapter/10.1007/978-3-642-55415-5_5
+
+INSTALLATION
+
+$ make
+
+First, the Makefile compiles the source code of HElib (https://github.com/shaih/HElib), ntl library (http://www.shoup.net/ntl/) and libtomcrypt (https://github.com/libtom/libtomcrypt).
+Second, it compiles MKSim source code and links all objects in "mksim" binary file, which is put in "bin" folder.
+
+RUN
+
+$ ./mksim -h
+
+Outputs all parameters of the application.
+
+To launch it with the configuration file:
+
+$ ./mksim -c config_sample.conf
+
+This will execute a simple prompt menu where you can import the path with documents
+and also input a search query (keywords) to invoke the ranked search.
+The result of ranked search is stored in a log file (typically, named "mksim.log" in "bin" folder).
+
+ETC
+
+Your can find the sample configuration file in "conf" folder.
+Your can find textual document in "example" folder.
+
+AUTHORS
+
+Mikhail Strizhov (strizhov@cs.colostate.edu)
