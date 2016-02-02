@@ -1,0 +1,33 @@
+1454348129 LTCManager.cpp [58]: DEBUG: LTC initialization begins.
+1454348129 LTCManager.cpp [67]: DEBUG: LTC initialization ends.
+1454348129 LTCManager.cpp [74]: DEBUG: Generation of secret key for LTC begins.
+1454348129 LTCManager.cpp [113]: DEBUG: Generation of secret key for LTC ends.
+1454348136 SimSearch.cpp [262]: DEBUG: Thread pool size is '1'.
+1454348136 SimSearch.cpp [264]: DEBUG: Initializing pool...
+1454348136 SimSearch.cpp [384]: INFO: Entering interactive mode.
+1454348148 IndexBuildEngine.cpp [100]: DEBUG: Reading document collection begins.
+1454348148 EventHandler.cpp [91]: DEBUG: Handling '3' words from '../example/example.txt'.
+1454348148 EventHandler.cpp [91]: DEBUG: Handling '7' words from '../example/example2.txt'.
+1454348150 StatsTracker.cpp [93]: INFO: Method execution time: 2 seconds.
+1454348150 IndexBuildEngine.cpp [106]: DEBUG: Reading document collection ends.
+1454348160 IndexBuildEngine.cpp [111]: DEBUG: Writing keyword dictionary to file begins.
+1454348160 IndexBuildEngine.cpp [117]: DEBUG: Writing keyword dictionary to file ends.
+1454348160 IndexBuildEngine.cpp [120]: DEBUG: Calculating term frequency begins.
+1454348160 IndexBuildEngine.cpp [268]: DEBUG: Keyword Dictionary size is '5'.
+1454348160 StatsTracker.cpp [93]: INFO: Method execution time: 0 seconds.
+1454348160 IndexBuildEngine.cpp [126]: DEBUG: Calculating term frequency ends.
+1454348160 IndexBuildEngine.cpp [128]: DEBUG: Homomorphic Encryption of term frequency begins.
+1454348174 EncryptTFIndexTask.cpp [192]: DEBUG: TF index encryption is completed for document 'example'.
+1454348180 EncryptTFIndexTask.cpp [192]: DEBUG: TF index encryption is completed for document 'example2'.
+1454348182 StatsTracker.cpp [93]: INFO: Method execution time: 22 seconds.
+1454348182 IndexBuildEngine.cpp [134]: DEBUG: Homomorphic Encryption of term frequency ends.
+1454348182 IndexBuildEngine.cpp [137]: DEBUG: SSE2 index construction begins.
+1454348182 StatsTracker.cpp [93]: INFO: Method execution time: 0 seconds.
+1454348182 IndexBuildEngine.cpp [143]: DEBUG: SSE2 index construction ends.
+1454348182 IndexBuildEngine.cpp [145]: DEBUG: Writing SSE2 index to the file begins.
+1454348182 IndexBuildEngine.cpp [151]: DEBUG: Writing SSE2 index to the file ends.
+1454373510 SimSearch.cpp [502]: DEBUG: Killing pool.
+1454373510 Thread.cpp [58]: CRITICAL: Thread is run.
+1454373510 SimSearch.cpp [504]: DEBUG: Done!
+1454373510 SimSearch.cpp [506]: DEBUG: Killing queue.
+1454373510 SimSearch.cpp [508]: DEBUG: Done!
