@@ -344,16 +344,33 @@ int main(int argc, char **argv)
       oSearch->Init();
 
       //std::string word_input = "ospf bgp mime xml iscsi";
-      std::string word_input = "certificate encryption authorization authentication framework";
+      //std::string word_input = "certificate encryption authorization authentication framework";
+    
+      // Get the number of words to randomly generate in search query
+      std::vector<int> query_random_size{ 5,10,15};
 
-      // Execute search
-      if (oSearch->SearchIndex(word_input) == false)
+      // Iterate on each value in random vector
+      for (const auto& num : query_random_size)
       {
-        elog(ERROR, "Unable to execute search.\n");
-      }
-      else
-      {
-        oSearch->PrintResults();
+        std::string word_input;
+        // Generate random words and put result a string
+        if (oSearch->GenRandomSearchQuery(num, word_input) == false)
+	{ 
+	  elog(ERROR, "Unable to generate random search query.\n");
+	  continue;
+	}
+      
+	elog(DEBUG, "Number of generated RANDOM words: '%d'.\n", num);
+
+        // Execute search
+        if (oSearch->SearchIndex(word_input) == false)
+        {
+          elog(ERROR, "Unable to execute search.\n");
+        }
+        else
+        {
+          oSearch->PrintResults();
+        }
       }
     }
 /*

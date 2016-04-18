@@ -74,6 +74,7 @@ public:
 		virtual bool Init();
 		bool SearchIndex(const std::string& p_sInput);
 		void PrintResults();
+                bool GenRandomSearchQuery(int p_iRandInt, std::string& p_sWords);
 
 private:
 

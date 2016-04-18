@@ -46,6 +46,8 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/make_shared.hpp>
 #include <boost/scoped_ptr.hpp>
+#include "boost/random.hpp"
+#include "boost/generator_iterator.hpp"
 #include "SearchEngine.h"
 #include "Log.h"
 #include "StatsTracker.h"
@@ -799,5 +801,41 @@ bool SearchEngine::ChompWordInput(const std::string& p_sContent,
   return true;
 }
 
+bool SearchEngine::GenRandomSearchQuery(int p_iRandInt, std::string& p_sWords)
+{
+  if (p_iRandInt < 0)
+  {
+    elog(ERROR, "Random is negative");
+    return false;
+  }
+
+  if (p_sWords.length() != 0)
+    p_sWords.clear();
+        
+  // Get dictionary and convert it to array
+  if (ReadKeywordDictionary() == false)
+  {
+    elog(ERROR, "Unable to read keyword dictionary.\n");
+    return false;
+  }
+  const std::set<std::string>& stDictionary = m_oDictionary->GetDictionary();
+  std::vector<std::string> tmpVector;
+  std::copy(stDictionary.begin(), stDictionary.end(), std::back_inserter(tmpVector));
+  
+  int idx = 0;
+  typedef boost::mt19937 RNGType;
+  RNGType rng;
+  boost::uniform_int<> zero_to_n(0, tmpVector.size());
+  boost::variate_generator< RNGType, boost::uniform_int<> > dice(rng, zero_to_n);
+	      
+  for (int i = 0; i < p_iRandInt; i++)
+  {
+    idx = dice();
+    std::string word = tmpVector[idx];
+    p_sWords = p_sWords + word + " ";
+  }
+
+  return true;
+}
 
 
